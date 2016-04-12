@@ -1,0 +1,60 @@
+{
+  "stream": {
+    "_id": 20778148592,
+    "game": "Ratchet & Clank",
+    "viewers": 2174,
+    "created_at": "2016-04-12T21:57:36Z",
+    "video_height": 1080,
+    "average_fps": 30.01017294,
+    "delay": 0,
+    "is_playlist": false,
+    "_links": {
+      "self": "https:\/\/api.twitch.tv\/kraken\/streams\/ratchetandclank"
+    },
+    "preview": {
+      "small": "https:\/\/static-cdn.jtvnw.net\/previews-ttv\/live_user_ratchetandclank-80x45.jpg",
+      "medium": "https:\/\/static-cdn.jtvnw.net\/previews-ttv\/live_user_ratchetandclank-320x180.jpg",
+      "large": "https:\/\/static-cdn.jtvnw.net\/previews-ttv\/live_user_ratchetandclank-640x360.jpg",
+      "template": "https:\/\/static-cdn.jtvnw.net\/previews-ttv\/live_user_ratchetandclank-{width}x{height}.jpg"
+    },
+    "channel": {
+      "mature": false,
+      "status": "Episode 2 with Melonie Mac and James Stevenson!",
+      "broadcaster_language": "en",
+      "display_name": "RatchetandClank",
+      "game": "Ratchet & Clank",
+      "language": "en",
+      "_id": 117447297,
+      "name": "ratchetandclank",
+      "created_at": "2016-03-01T16:16:18Z",
+      "updated_at": "2016-04-12T22:16:31Z",
+      "delay": null,
+      "logo": "https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/ratchetandclank-profile_image-55e6dbdeaf55fbde-300x300.png",
+      "banner": null,
+      "video_banner": "https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/ratchetandclank-channel_offline_image-be57f33bc3ed8a70-1920x1080.png",
+      "background": null,
+      "profile_banner": "https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/ratchetandclank-profile_banner-f63862eae140895b-480.jpeg",
+      "profile_banner_background_color": null,
+      "partner": true,
+      "url": "https:\/\/www.twitch.tv\/ratchetandclank",
+      "views": 40302,
+      "followers": 450,
+      "_links": {
+        "self": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank",
+        "follows": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/follows",
+        "commercial": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/commercial",
+        "stream_key": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/stream_key",
+        "chat": "http:\/\/api.twitch.tv\/kraken\/chat\/ratchetandclank",
+        "features": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/features",
+        "subscriptions": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/subscriptions",
+        "editors": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/editors",
+        "teams": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/teams",
+        "videos": "http:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank\/videos"
+      }
+    }
+  },
+  "_links": {
+    "self": "https:\/\/api.twitch.tv\/kraken\/streams\/ratchetandclank",
+    "channel": "https:\/\/api.twitch.tv\/kraken\/channels\/ratchetandclank"
+  }
+}
