@@ -1,15 +1,22 @@
+body {
+  width: 100%;
+}
 header {
   background: #6441a5;
   color: #fff;
   min-height: 125px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #8d72c1;
 }
 header h1 {
   font-family: 'Jockey One', sans-serif;
-  text-shadow: 0 1px 0 rgb(204,204,204),
-               0 2px 0 rgb(201,201,201),
-               0 3px 0 rgb(187,187,187),
-               0 4px 0 rgb(185,185,185),
-               0 5px 0 rgb(170,170,170),
+  /*Adapted from http://enjoycss.com/gallery/text_effects/dF#text*/
+  text-shadow: 0 1px 0 rgb(170,170,170),
+               0 2px 0 rgb(169,169,169),
+               0 3px 0 rgb(151,151,151),
+               0 4px 0 rgb(149,149,149),
+               0 5px 0 rgb(134,134,134),
                0 6px 1px rgba(0,0,0,0.1),
                0 0 5px rgba(0,0,0,0.1),
                0 1px 3px rgba(0,0,0,0.3),
@@ -17,4 +24,14 @@ header h1 {
                0 5px 10px rgba(0,0,0,0.25),
                0 10px 10px rgba(0,0,0,0.2),
                0 20px 20px rgba(0,0,0,0.15);
+  font-size: 5rem;
+  line-height: 6rem;
+}
+header textarea {
+  height: 12rem;
+  color: #000;
+  width: 100%;
+}
+header button {
+  margin-top: 4rem;
 }
