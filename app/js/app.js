@@ -24,18 +24,22 @@ function fetchStreamData( streamName ) {
     streamObj.preview = data.stream.preview.medium;
     streamObj.status = data.stream.channel.status;
     streamObj.logo = data.stream.channel.logo;
-    streamObj.url = data.stream._links.self;
+    streamObj.url = data.stream.channel.url;
 
     displayStream(streamObj);
   });
 }
 
 function displayStream( streamObj ) {
-  $('#mainContainer').append(
-    '<div class="twitchContainer col-xs-12 col-sm-4">' +
-    '<img class="streamLogo" src="' + streamObj.logo + '" alt="logo">' +
-    '<h2>' + streamObj.streamName + '</h2>' +
-    '<p>' + streamObj.status + '</p>' +
-    '</div>'
-  );
+  $('<div class="twitchContainer col-xs-12 col-sm-4">' +
+      '<img class="streamLogo" src="' + streamObj.logo + '" alt="logo">' +
+      '<h2>' + streamObj.streamName + '</h2>' +
+      '<p>' + streamObj.status + '</p>' +
+      '</div>'
+  )
+  .css('background-image', 'url(' + streamObj.preview + ')')
+  .on('click', function() {
+    window.open(streamObj.url, '_blank');
+  })
+  .appendTo($('#mainContainer'));
 }
