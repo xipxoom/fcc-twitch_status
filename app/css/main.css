@@ -74,3 +74,11 @@ header button {
 .container-fluid {
   padding: 0;
 }
+.instructions {
+  color: #fff;
+  margin: 30px auto;
+  padding: 20px;
+  width: 50%;
+  border: 2px solid #8d72c1;
+  border-radius: 20px;
+}
