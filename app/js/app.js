@@ -1,7 +1,11 @@
 //onReady
 $(function() {
-  //temporary testing functionality
+  if (localStorage.getItem('ts_streams')) {
+    $('#streamList').val(localStorage.getItem('ts_streams'));
+    updateStreams();
+  }
   $('#refreshBtn').on('click', function() {
+    localStorage.setItem('ts_streams', $('#streamList').val());
     updateStreams();
   });
 });
@@ -11,29 +15,40 @@ function updateStreams() {
   // Clear out the stale data
   $('#mainContainer').html("");
   // And fetch the fresh
-  // TODO: Remove blank lines
   var streamList = $('#streamList').val().split('\n');
   for (var i = 0, len = streamList.length; i < len; i++) {
-    fetchStreamData(streamList[i]);
+    if (streamList[i]) {
+      fetchStreamData(streamList[i]);
+    }
   }
 }
 
 function fetchStreamData( streamName ) {
   $.getJSON('https://api.twitch.tv/kraken/streams/' + streamName + '?callback=?', function(data){
     var streamObj = {};
-    console.log(data);
 
     // Account not streaming
-    if (!data.stream){
-      console.log('Not currently streaming.  Handle this!');
+    if (!data.stream && !data.status){
+      $.getJSON('https://api.twitch.tv/kraken/users/' + streamName + '?callback=?', function(data){
+        streamObj.streamName = data.name;
+        streamObj.preview = './img/static.jpg';
+        streamObj.status = "Offline";
+        streamObj.logo = data.logo || './img/question.jpg';
+        streamObj.url = 'https://www.twitch.tv/' + data.name;
+        streamObj.streaming = false;
+
+        displayStream(streamObj);
+      });
 
     // Account doesn't exist
     } else if (data.status == 404) {
       streamObj.streamName = streamName;
       streamObj.preview = './img/static.jpg';
-      streamObj.status = 'Account Doesn\'t exist';
+      streamObj.status = 'Account Doesn\'t Exist';
       streamObj.logo = './img/question.jpg';
       streamObj.streaming = false;
+
+      displayStream(streamObj);
 
     // Account closed
     } else if (data.status == 422) {
@@ -43,6 +58,8 @@ function fetchStreamData( streamName ) {
       streamObj.logo = './img/question.jpg';
       streamObj.streaming = false;
 
+      displayStream(streamObj);
+
     } else {
     // Currently streaming
       streamObj.streamName = data.stream.channel.display_name;
@@ -51,9 +68,9 @@ function fetchStreamData( streamName ) {
       streamObj.logo = data.stream.channel.logo;
       streamObj.url = data.stream.channel.url;
       streamObj.streaming = true;
-    }
 
-    displayStream(streamObj);
+      displayStream(streamObj);
+    }
   });
 }
 
@@ -65,9 +82,16 @@ function displayStream( streamObj ) {
       '<p>' + streamObj.status + '</p>' +
       '</div>'
   )
-  .css('background-image', 'url(' + streamObj.preview + ')')
-  .on('click', function() {
-    window.open(streamObj.url, '_blank');
-  });
+  .css('background-image', 'url(' + streamObj.preview + ')');
+  if (streamObj.url) {
+    container.on('click', function() {
+      window.open(streamObj.url, '_blank');
+    });
+  }
+  if (streamObj.streaming) {
+    container.addClass('streaming');
+  } else {
+    container.addClass('offline');
+  }
   container.appendTo($('#mainContainer'));
 }
