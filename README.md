@@ -25,3 +25,9 @@ Build a [CodePen.io](https://codepen.io) app that is functionally similar to the
 ### Libraries
 * [Bootstrap](https://getbootstrap.com)
 * [jQuery](https://jquery.com/)
+
+### Todo
+* Add radio buttons to toggle between showing all streams or only showing active ones.
+
+### Notes:
+Hosted on [codepen](http://codepen.io/xipxoom/full/wGjMve/).
