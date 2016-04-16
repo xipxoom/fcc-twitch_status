@@ -93,5 +93,6 @@ function displayStream( streamObj ) {
   } else {
     container.addClass('offline');
   }
+  container.addClass('animated fadeIn');
   container.appendTo($('#mainContainer'));
 }
