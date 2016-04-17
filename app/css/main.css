@@ -132,3 +132,20 @@ header button {
     background: inherit;
     left: 40px;
 }
+
+/* From http://daneden.github.io/animate.css under MIT license */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+}
