@@ -8,6 +8,17 @@ $(function() {
     localStorage.setItem('ts_streams', $('#streamList').val());
     updateStreams();
   });
+  $('#displayStreams').change(function() {
+    if(this.checked) {
+      // display only online streams
+      $('.offline').hide();
+      console.log('checked');
+    } else {
+      // display all streams
+      console.log('not checked');
+      $('.offline').show();
+    }
+  });
 });
 
 

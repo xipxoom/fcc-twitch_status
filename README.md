@@ -27,7 +27,8 @@ Build a [CodePen.io](https://codepen.io) app that is functionally similar to the
 * [jQuery](https://jquery.com/)
 
 ### Todo
-* Add radio buttons to toggle between showing all streams or only showing active ones.
+* Add animation on show/hide active streams.
+* Deal with refresh while offline/online stream checkbox is checked.
 
 ### Notes:
 Hosted on [codepen](http://codepen.io/xipxoom/full/wGjMve/).
