@@ -51,6 +51,7 @@ header button {
   background-image: url('../img/live_placeholder.jpg');
   background-size: cover;
   height: 180px;
+  cursor: pointer;
 }
 .twitchContainer h2 {
   text-align: center;
